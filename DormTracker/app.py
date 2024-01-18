@@ -68,7 +68,7 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        if username == "509" and password == "123":
+        if username == "" and password == "":
             return render_template("index.html",status1=pk,status2=ss,status3=sj,status4=am)
     
     return render_template('login.html', error_message=error_message)
