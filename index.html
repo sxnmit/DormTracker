@@ -4,136 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/static/style.css" media="screen" />
+  <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
   <title>DormTracker</title>
-  <style>
-    body {
-      font-family: 'Times New Roman', Times, serif, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
 
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav {
-      background-color: #444;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-    }
-
-    h2 {
-      width: 100%;
-      text-align: center;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 150px;
-    }
-
-    section {
-      padding: 20px;
-    }
-
-    footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    main {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      padding: 20px;
-    }
-
-    .roommate-button {
-      background-color: #fff;
-      border: 2px solid #ddd;
-      border-radius: 15px;
-      padding: 20px;
-      margin: 20px;
-      width: 250px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
-      cursor: pointer;
-    }
-
-    .roommate-button:hover {
-      transform: scale(1.05);
-      border-color: #617cac;
-    }
-
-    .roommate-button h3 {
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    .status {
-      color: #617cac;
-      font-weight: bold;
-    }
-
-    .divider {
-      width: 100%;
-      height: 1px;
-      background-color: #ddd;
-      margin: 20px 0;
-    }
-
-    .status {
-      color: #617cac;
-      font-weight: bold;
-    }
-
-    .add-guest {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-
-    .add-guest input {
-      padding: 10px;
-      width: 60%;
-      margin-right: 10px;
-      border: 2px solid #ddd;
-      border-radius: 5px;
-    }
-
-    .add-guest button {
-      padding: 10px;
-      background-color: #617cac;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease-in-out;
-    }
-
-    .add-guest button:hover {
-      background-color: #1851ba;
-    }
-
-    .divider {
-      width: 100%;
-      height: 1px;
-      background-color: #ddd;
-      margin: 20px 0;
-    }
-  </style>
 </head>
 
 <body>
@@ -142,64 +16,42 @@
     <h1>Automated Home Security System</h1>
   </header>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </nav>
 
   <section>
-    <h2>Roomate Status!</h2>
+    <h2>Roommates:</h2>
   </section>
   <main>
     <!-- Roommate 1 -->
-    <button class="roommate-button" onclick="status_change()">
+    <button class="roommate-button" onclick="status_change1()">
       <h3>Pranav Kukreja</h3>
-      <div class="status">Status: {{ status }}</div>
+      <div id="status1" class="status">Status: {{ status1 }}</div>
     </button>
 
     <!-- Roommate 2 -->
-    <button class="roommate-button" onclick="status_change()">
+    <button class="roommate-button" onclick="status_change2()">
       <h3>Sanmit Singh</h3>
-      <div class="status">Status: {{ status }}</div>
+      <div id="status2" class="status">Status: {{ status2 }}</div>
     </button>
 
     <div class="divider"></div>
 
     <!-- Roommate 3 -->
-    <button class="roommate-button" onclick="status_change()">
+    <button class="roommate-button" onclick="status_change3()">
       <h3>Sumin Jeong</h3>
-      <div class="status">Status: {{ status }}</div>
+      <div id="status3" class="status">Status: {{ status3 }}</div>
     </button>
 
     <!-- Roommate 4 -->
-    <button class="roommate-button" onclick="status_change()">
+    <button class="roommate-button" onclick="status_change4()">
       <h3>Ashlene Metley</h3>
-      <div class="status">Status: {{ status }}</div>
+      <div id="status4" class="status">Status: {{ status4 }}</div>
     </button>
 
     <div class="divider"></div>
 
-    <!-- Add Guest Keycard -->
-    <div class="add-guest">
-      <input type="text" placeholder="Guest Name">
-      <button>Add Guest Keycard</button>
-    </div>
+
   </main>
-
+  <script src="static/main.js"></script>
 </body>
-<script>
-  function status_change() {
-    const Home = document.createElement('button');
-    Home.textContent = 'Set Home';
-    document.body.appendChild(Home);
-
-    const Away = document.createElement('button');
-    Away.textContent = 'Set Away!';
-    document.body.appendChild(Away);
-
-  }
-
-</script>
 
 </html>
