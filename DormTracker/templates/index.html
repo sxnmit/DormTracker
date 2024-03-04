@@ -2,56 +2,54 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/static/style.css" media="screen" />
   <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
   <title>DormTracker</title>
 
 </head>
 
 <body>
-
-  <header>
-    <h1>Automated Home Security System</h1>
-  </header>
-
-
-  <section>
-    <h2>Roommates:</h2>
-  </section>
-  <main>
-    <!-- Roommate 1 -->
-    <button class="roommate-button" onclick="status_change1()">
-      <h3>Pranav Kukreja</h3>
-      <div id="status1" class="status">Status: {{ status1 }}</div>
-    </button>
-
-    <!-- Roommate 2 -->
-    <button class="roommate-button" onclick="status_change2()">
-      <h3>Sanmit Singh</h3>
-      <div id="status2" class="status">Status: {{ status2 }}</div>
-    </button>
-
-    <div class="divider"></div>
-
-    <!-- Roommate 3 -->
-    <button class="roommate-button" onclick="status_change3()">
-      <h3>Sumin Jeong</h3>
-      <div id="status3" class="status">Status: {{ status3 }}</div>
-    </button>
-
-    <!-- Roommate 4 -->
-    <button class="roommate-button" onclick="status_change4()">
-      <h3>Ashlene Metley</h3>
-      <div id="status4" class="status">Status: {{ status4 }}</div>
-    </button>
-
-    <div class="divider"></div>
+  <div class="img-container">
+    <img src="/static/images/background.jpeg" class="background-img" />
+    <div class="image-text">Automated Home</div>
+    <div class="image-text2">Security</div>
+    <section>
+      <h2>Roommates:</h2>
+    </section>
+    <main>
+      <!-- Roommate 1 -->
+      <button class="roommate-button" onclick="status_change1()">
+        <h3>Roommate 1</h3>
+        <div id="status1" class="status">Status: {{ status1 }}</div>
+      </button>
+      <!-- Roommate 2 -->
+      <button class="roommate-button" onclick="status_change2()">
+        <h3>Roommate 2</h3>
+        <div id="status2" class="status">Status: {{ status2 }}</div>
+      </button>
 
 
-  </main>
-  <script src="static/main.js"></script>
+      <!-- Roommate 3 -->
+      <button class="roommate-button" onclick="status_change3()">
+        <h3>Roommate 3</h3>
+        <div id="status3" class="status">Status: {{ status3 }}</div>
+      </button>
+
+      <!-- Roommate 4 -->
+      <button class="roommate-button" onclick="status_change4()">
+        <h3>Roommate 4</h3>
+        <div id="status4" class="status">Status: {{ status4 }}</div>
+      </button>
+
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <script src="static/main.js"></script>
 </body>
 
 </html>
