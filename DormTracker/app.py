@@ -2,22 +2,20 @@ import serial.tools.list_ports
 from flask import Flask, render_template, request,redirect,url_for
 from threading import Thread
 from flask_socketio import SocketIO
+from flask_cors import CORS
 from threading import Thread
-
+import http
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
-
+CORS(app)
 app = Flask(__name__)
 app.debug = True
 
-# Create serial port instance
-serialInst = serial.Serial('/dev/tty.usbserial-120', 9600)
-#port = '/dev/tty.usbmodem1201'
-#serialInst.port = port 
-#serialInst.open()
 
-# Global variable to store status
+serialInst = serial.Serial('/dev/tty.usbmodem1201', 9600)
+serialInst.open()
+
 pk = 'Away'
 ss = "Away"
 sj = "Away"
@@ -51,10 +49,8 @@ def read_serial_data():
     except Exception as e:
         print(f"Error in read_serial_data: {e}")
             
+         
             
-            
-
-# Start the background thread to continuously check the status
 serial_thread = Thread(target=read_serial_data)
 serial_thread.start()
 
